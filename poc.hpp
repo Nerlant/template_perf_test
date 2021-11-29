@@ -8,7 +8,7 @@ namespace poc
 	size_t GetSum(const std::vector<float>& data);
 
 	template<typename ContainerType, typename GetSumFn, typename SumType = std::invoke_result_t<GetSumFn, ContainerType>>
-	size_t Template(ContainerType data, SumType add, GetSumFn get_sum)
+	size_t Template(const ContainerType& data, SumType add, GetSumFn get_sum)
 	{
 		static_assert(std::is_convertible_v<SumType, size_t>);
 
